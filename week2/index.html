@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <title>Book</title>
+</head>
+<body>
+  <div class="cursor">
+
+  </div>
+ <div class="content-wrapper">
+    <div class="bookchange-header">
+      <div id="arrow-left"><img src="./img/arrowleft.png" id="arrow-l" alt=""></div>
+      <div id="arrow-right"><img src="./img/arrowright.png" id="arrow-r"alt=""></div>
+    </div> 
+      <div class="imgwrapper" id="content1">
+        <img src="./img/bookimg.jpeg" alt=""/ class="bookimg">  
+      </div>
+     
+  <div class="autor-wrapper" id="content2">
+      <span class="autor">조엘마시</span> 
+      <span class="autor-des">는 20여 년 경력을 가진 베테랑 UX 디자이너이자 UX 관리자로, 스웨덴의 여러 에이전시에서 UX 담당 부서를 총괄했다. 혁신적 성과를 낸 스타트업뿐 아니라 앱솔루트 보드카, 삼성, 맥도날드 등 유수한 글로벌 브랜드들과도 활발히 협업하고 있다.</span>  
+  </div>
+  <div class="bookcontent-wrapper" id="content3">
+    <span class="bookcontent-title">이 책은</span>
+    <span class="bookcontent"> UX 입문자부터 실무 경험자까지 모두에게 필요한 인사이트와 지식을 오랜 경험을 갖춘 UX 디자인 관리자가 간결하고 유머러스한 설명으로 풀어낸다. UX의 본질적 개념은 물론 리서치, 콘텐츠, 프로토타입, 사용자 심리 등 거의 모든 영역을 100개의 레슨으로 세밀하게 나누어 아주 간단명료하게 강의한다. </span>  
+  </div>
+  <div class="bookreview-wrapper" id="content4">
+    <span class="bookreview-title">Review</span>
+    <span class="bookreview"> UX/UI design에 대해 공부를 시작하고 싶어서 구매한 책이다. 책 제목에서부터 초보자도 쉽게 읽을 수 있는 책이라는 생각이 들어서 구매하였다. 이 책의 장점은 첫 번째로 순서에 상관없이 원하는 카테고리를 찾아 읽을 수 있다는 것이고, 두 번째로 적절한 일러스트레이션 덕분에 직관적으로 이해할 수 있다.  </span>  
+  </div>
+ </div>
+
+</body>
+<script>
+  const bookcontent1 = document.getElementById('content1')
+  const bookcontent2 = document.getElementById('content2')
+  const bookcontent3 = document.getElementById('content3')
+  const bookcontent4 = document.getElementById('content4')
+
+  window.addEventListener("scroll", () => {
+    bookcontent1.style.opacity = `${100-(window.scrollY*0.1)}%`
+  })
+
+  window.addEventListener("scroll", () => {
+    if(window.scrollY<700 && window.scrollY>0) {
+    bookcontent2.style.transform = `translateY(-50%) translateY(${window.scrollY*0.7}px) translateX(-50%)`
+    bookcontent2.style.opacity = `${window.scrollY*0.2}%`
+    }
+    else {
+    bookcontent2.style.top = "585px";
+  }
+  })
+
+  window.addEventListener("scroll", () => {
+    if(window.scrollY<700 && window.scrollY>0) {
+    bookcontent3.style.transform = `translateY(${window.scrollY*1.3}px) translateX(-50%) translateY(-50%)`
+    bookcontent3.style.opacity = `${window.scrollY*0.2}%`
+    }
+    else {
+    bookcontent3.style.top = "600px";
+    }
+  })
+
+  window.addEventListener("scroll", () => {
+    if(window.scrollY<700 && window.scrollY>0) {
+    bookcontent4.style.transform = `translateY(${window.scrollY*1.9}px) translateX(-50%) translateY(-50%)`
+    bookcontent4.style.opacity = `${window.scrollY*0.2}%`
+    }
+    else {
+    bookcontent4.style.top = "620px";
+    }
+  })
+
+  const cursor = document.querySelector(".cursor")
+
+  function createSpan(e) {
+    let mymousemove = document.createElement("span") 
+    mymousemove.classList.add("mouseMove")
+    cursor.appendChild(mymousemove)
+    mymousemove.style.top = e.clientY + "px";
+    mymousemove.style.left = e.clientX + "px";
+
+    // mymousemove.addEventListener("mousedown", () => {
+    //   cursor.removeChild(mymousemove)
+    // })
+  }
+
+  document.addEventListener("mousemove", (e) => {
+    createSpan(e)
+  })
+
+
+ 
+
+ console.log(scrollY)
+ console.log(bookcontent2.clientHeight)
+</script>
+</html>

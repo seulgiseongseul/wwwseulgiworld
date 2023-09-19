@@ -1,0 +1,246 @@
+@font-face {
+  font-family: 'KOTRALEAP';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRALEAP.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KimjungchulGothic-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulGothic-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Binggrae-Two';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+  font-size: 30px;
+  background-color: rgb(255, 255, 255);
+}
+
+.bookchange-header {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  top:50%;
+}
+
+#arrow-left {
+  display: flex;
+  justify-content: center;
+  margin: 0 400px;
+
+}
+
+#arrow-right {
+  margin: 0 400px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 210vh;
+}
+
+.imgwrapper {
+  z-index: 3;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+
+}
+
+.bookchange-header img {
+  width: 40px;
+  height: 40px;
+}
+
+img#arrow-l:hover {
+ transform: scale(1.5);
+ transition: 1s;
+}
+
+.bookimg {
+  box-shadow: 5px 5px 10px #424242;
+  margin: 0 auto 0;
+  width: auto;
+  height: 700px;
+  transition: 1s;
+}
+
+.bookimg:hover {
+  transform: scale(1.1);
+}
+.autor-wrapper {
+  color:#000000;
+  font-family: 'Binggrae-Two';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  margin: 10px auto 10px;
+  height: auto;
+  width: 440px;
+  z-index: 2;
+}
+
+.autor {
+  font-size: 1.5rem;
+}
+
+.autor-des {
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.autor-wrapper:hover {
+  font-size: 1.5rem;
+}
+
+.bookcontent-wrapper {
+  color:#000000;
+  opacity: 0;
+  font-family: 'KimjungchulGothic-Bold';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  margin: 10px auto 10px;
+  height: auto;
+  width: 440px;
+  z-index: 2;
+}
+
+.bookcontent-wrapper:hover {
+  font-size: 1.5rem;
+}
+
+.bookcontent-title {
+  font-size: 1.5rem;
+}
+.bookcontent {
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.bookreview-wrapper {
+  color:#000000;
+  font-family: 'KOTRALEAP';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  margin: 10px auto 10px;
+  height: auto;
+  width: 440px;
+  z-index: 2;
+}
+
+.bookreview-title {
+  font-size: 1.5rem;
+}
+
+.bookreview {
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.bookreview-wrapper:hover {
+  font-size: 1.5rem;
+}
+
+#content2 {
+  transition: 0.8s;
+}
+#content3 {
+  transition: 0.8s;
+}
+#content4 {
+  transition: 0.8s;
+}
+
+.cursor {
+  position: fixed;
+  z-index: 1;
+}
+
+@keyframes myMove {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50%{
+    transform: scale(2.5) rotate(180deg);
+  }
+  100%{
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+
+.mouseMove {
+  animation: myMove 2s ease-out infinite;
+  position: absolute;
+  display: inline-block;
+  background-color: rgb(0, 0, 0);
+  border: solid 0.01px rgba(255, 255, 255, 0.5) ;
+  width: 8px;
+  height: 8px;
+  z-index: 1;
+}
